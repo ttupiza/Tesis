@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/perfil.css' %}">
+</head>
+<body>
+    {% include 'pages/components/navbar.html' %}
+    <div class="perfil-page">
+        <!-- SECCION 1: Registro de Beneficiario -->
+        <form class="perfil-card user-profile-container" method="post">
+            {% csrf_token %}
+            <div class="profile-header">
+                <h2 class="profile-title">Registro de Usuario</h2>
+            </div>
+            <div class="profile-form">
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="primerNombre">Primer Nombre</label>
+                        <div class="input-with-icon">
+                            <input placeholder="Tu primer nombre" type="text" id="primerNombre" name="primerNombre" value="{{ user.primerNombre|default:'' }}" />
+                            <span class="edit-icon">&#9998;</span>
+                        </div>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="segundoNombre">Segundo Nombre</label>
+                        <div class="input-with-icon">
+                            <input placeholder="Opcional" type="text" id="segundoNombre" name="segundoNombre" value="{{ user.segundoNombre|default:'' }}" />
+                            <span class="edit-icon">&#9998;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="primerApellido">Primer Apellido</label>
+                        <div class="input-with-icon">
+                            <input placeholder="Tu primer apellido" type="text" id="primerApellido" name="primerApellido" value="{{ user.primerApellido|default:'' }}" />
+                            <span class="edit-icon">&#9998;</span>
+                        </div>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="segundoApellido">Segundo Apellido</label>
+                        <div class="input-with-icon">
+                            <input placeholder="Opcional" type="text" id="segundoApellido" name="segundoApellido" value="{{ user.segundoApellido|default:'' }}" />
+                            <span class="edit-icon">&#9998;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                        <div class="input-with-icon">
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="{{ user.fechaNacimiento|default:'' }}" />
+                            <span class="edit-icon">&#9998;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="email">Email</label>
+                        <div class="input-with-icon">
+                            <input placeholder="correo@ejemplo.com" type="email" id="email" name="email" value="{{ user.email|default:'' }}" />
+                            <span class="edit-icon">&#9998;</span>
+                        </div>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="cedula">Cédula (CI)</label>
+                        <div class="input-with-icon">
+                            <input placeholder="V-00000000" type="text" id="cedula" name="cedula" value="{{ user.cedula|default:'' }}" />
+                            <span class="edit-icon">&#9998;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="telefono">Teléfono</label>
+                    <div class="input-with-icon">
+                        <input placeholder="04xx-xxxxxxx" type="tel" id="telefono" name="telefono" value="{{ user.telefono|default:'' }}" />
+                        <span class="edit-icon">&#9998;</span>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="direccion">Dirección</label>
+                    <div class="input-with-icon">
+                        <input placeholder="Calle, Ciudad, Estado" type="text" id="direccion" name="direccion" value="{{ user.direccion|default:'' }}" />
+                        <span class="edit-icon">&#9998;</span>
+                    </div>
+                </div>
+
+                
+
+                <div class="actions-row">
+                    {% include 'pages/components/boton.html' with type='submit' class='save-button' text='Guardar Cambios' %}
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

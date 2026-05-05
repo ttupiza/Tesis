@@ -1,0 +1,229 @@
+/* Variables de color */
+:root {
+    --primary-red: #d9234b;
+    --light-bg: #f8f8f8;
+    --header-bg: #e9e0e2; 
+    --gradient-start: #ee7752;
+    --gradient-end: #e73c7e;
+    --text-color: #333;
+    --input-border: #ccc;
+}
+
+/* Mantener altura para root si lo necesitas, pero NO aplicar fondo global */
+body, #root {
+    height: 100%;
+    margin: 0;
+}
+
+/* Quitar: body { background: ... } */
+/* En su lugar, asegurar que el contenedor de login tenga el degradado */
+.background-gradient-react {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(238,119,82,0.95), rgba(231,60,126,0.95));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background-size: cover;
+}
+
+/* Contenedor de la caja de login */
+.login-container-react {
+    background-color: rgba(255,255,255,0.98);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.35);
+}
+
+/* Estilos del encabezado (Iniciar Sesión) */
+.header-box-react {
+    background: rgba(255,255,255,0.9);
+    padding: 36px 20px 22px;
+    text-align: center;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    backdrop-filter: blur(4px);
+}
+
+.header-box-react h1 {
+    margin: 0 0 10px 0;
+    font-size: 1.9em;
+    font-weight: 600;
+}
+
+.header-box-react p {
+    margin: 0;
+    font-size: 0.98em;
+    color: #666;
+}
+
+/* Contenedor del formulario y botones */
+.form-box-react {
+    padding: 26px 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilos de etiquetas e inputs */
+.form-box-react label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--text-color);
+}
+
+.form-box-react input[type="text"],
+.form-box-react input[type="password"] {
+    width: 100%;
+    display: block;
+    padding: 12px 14px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 1em;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.18s, box-shadow 0.18s;
+    background: #fff;
+}
+
+.form-box-react input:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 4px 16px rgba(217,35,75,0.08);
+}
+
+/* Enlace de 'Olvidaste tu contraseña' */
+.forgot-password-react {
+    display: block;
+    text-align: right;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    font-size: 0.9em;
+    color: var(--primary-red);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-password-react:hover {
+    color: #a31d3d;
+}
+
+/* Estilos comunes para botones */
+.login-button-react,
+.create-account-button-react {
+    padding: 12px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    transition: background-color 0.18s, box-shadow 0.18s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botón 'Iniciar Sesión' (Principal) */
+.login-button-react {
+    background-color: var(--primary-red);
+    color: white;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 14px rgba(217,35,75,0.16);
+}
+
+.login-button-react:hover {
+    background-color: #a31d3d;
+    box-shadow: 0 8px 20px rgba(163,29,61,0.18);
+}
+
+/* Texto '¿No tienes una cuenta?' */
+.no-account-react {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 14px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+/* Botón 'Crear Cuenta' (Secundario) */
+.create-account-button-react {
+    background-color: white;
+    color: var(--primary-red);
+    border: 1px solid var(--primary-red);
+    padding: 12px;
+}
+
+.create-account-button-react:hover {
+    background-color: var(--light-bg);
+}
+
+.custom-button-react {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    text-align: center;      /* Centra el texto en el Link */
+    text-decoration: none;   /* Quita el subrayado del Link */
+    box-sizing: border-box;
+    transition: background-color 0.18s, box-shadow 0.18s, transform 0.1s;
+    font-family: inherit;    /* Asegura que use la misma fuente */
+}
+
+.custom-button-react:active {
+    transform: scale(0.98); /* Efecto de click */
+}
+
+/* Botón 'Iniciar Sesión' */
+.login-button-react {
+    background-color: var(--primary-red);
+    color: white;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 14px rgba(217,35,75,0.16);
+}
+
+.login-button-react:hover {
+    background-color: #a31d3d;
+    box-shadow: 0 8px 20px rgba(163,29,61,0.18);
+}
+
+/* Botón 'Regístrate' (antes create-account-button-react) */
+.register-button-react {
+    background-color: white;
+    color: var(--primary-red);
+    border: 1px solid var(--primary-red);
+}
+
+.register-button-react:hover {
+    background-color: var(--light-bg);
+}
+/* Responsive: ajustar paddings y tamaños en pantallas pequeñas */
+@media (max-width: 480px) {
+    .background-gradient-react {
+        padding: 24px 14px;
+    }
+
+    .login-container-react {
+        max-width: 96%;
+        border-radius: 10px;
+    }
+
+    .header-box-react h1 {
+        font-size: 1.6em;
+    }
+
+    .form-box-react {
+        padding: 18px 18px 22px;
+    }
+}
