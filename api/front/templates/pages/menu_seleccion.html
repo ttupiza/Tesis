@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal - INES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/menu.css' %}">
+</head>
+<body>
+    {% include 'pages/components/navbar.html' %}
+
+    <div class="menu-container">
+        <h1 class="menu-title">Panel de Control INES</h1>
+        <p class="menu-subtitle">Seleccione una opción para gestionar el sistema</p>
+
+        <div class="menu-grid">
+            <a href="{% url 'registro_beneficiario' %}" class="menu-card">
+                <i class="fa-solid fa-user-plus icon-card"></i>
+                <span>Registro Usuario</span>
+            </a>
+
+            <a href="{% url 'registro_edificio' %}" class="menu-card">
+                <i class="fa-solid fa-city icon-card"></i>
+                <span>Registro Edificio</span>
+            </a>
+
+            <a href="#" class="menu-card">
+                <i class="fa-solid fa-gauge-high icon-card"></i>
+                <span>Monitoreo</span>
+            </a>
+
+            <a href="#" class="menu-card">
+                <i class="fa-solid fa-bell icon-card"></i>
+                <span>Notificación</span>
+            </a>
+
+            <a href="#" class="menu-card">
+                <i class="fa-solid fa-gears icon-card"></i>
+                <span>Configuración</span>
+            </a>
+
+            <a href="/admin" class="menu-card admin-card">
+                <i class="fa-brands fa-python icon-card"></i>
+                <span>Django Admin</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

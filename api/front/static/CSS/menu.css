@@ -1,0 +1,84 @@
+/* menu.css */
+.menu-container {
+    padding: 120px 40px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menu-title {
+    color: #1967d2;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.menu-subtitle {
+    color: #5f6368;
+    margin-bottom: 50px;
+}
+
+/* Cuadrícula de tarjetas: 5 columnas exactas en PC */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Estilo de la Tarjeta */
+.menu-card {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #202124;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e8f0fe;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    aspect-ratio: 1 / 1; /* Mantiene las tarjetas cuadradas */
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(25, 103, 210, 0.1);
+    border-color: #1967d2;
+}
+
+.icon-card {
+    font-size: 3.5rem;
+    color: #1967d2;
+    margin-bottom: 20px;
+}
+
+.menu-card span {
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* RESPONSIVE: Una tarjeta bajo la otra en móviles */
+@media (max-width: 992px) {
+    .menu-grid {
+        /* Bajamos a 3 columnas en tablets para que no se amontonen */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-grid {
+        /* Una sola columna en móvil como solicitaste */
+        grid-template-columns: 1fr;
+        max-width: 350px; /* Evita que la tarjeta sea excesivamente ancha */
+        margin: 0 auto;
+    }
+    
+    .menu-card {
+        aspect-ratio: auto; /* En columna simple, mejor que el alto sea flexible */
+        padding: 30px;
+    }
+}
