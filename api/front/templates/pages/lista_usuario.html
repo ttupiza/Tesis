@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
     <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/perfil.css' %}">
     <link rel="stylesheet" href="{% static 'CSS/lista_beneficiarios.css' %}">
 </head>
 <body>
@@ -16,7 +15,7 @@
         <div class="reportes-card">
             <header class="report-header">
                 <div class="report-header-text">
-                    <h1 class="profile-title" style="color: #d9234b;">Lista de usuarios</h1>
+                    <h1 class="profile-title" >Lista de usuarios</h1>
                     <p class="profile-subtitle">Administra y consulta la información de los usuarios</p>
                 </div>
             </header>
@@ -29,7 +28,7 @@
             </form>
 
             <div class="table-wrapper">
-                <div class="table-title-bar" style="background: #d9c8c5; color: #d9234b;">
+                <div class="table-title-bar">
                     Usuarios Registrados
                 </div>
                 <div class="table-responsive">
@@ -70,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="table-actions-row" style="margin-top: 12px; display: flex; justify-content: flex-end;">
+            <div class="table-actions-row">
                 {% url 'registro_beneficiario' as registro_url %}
                 {% include 'pages/components/boton.html' with url=registro_url class='register-button-react fab-inline' text='Agregar Usuario' %}
             </div>

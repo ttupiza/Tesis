@@ -4,35 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesion</title>
+    <title>Acceso al Sistema</title>
     <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
     <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
 </head>
 <body>
     {% include 'pages/components/navbar.html' %}
-    <div class="background-gradient-react">
-        <div class="login-container-react">
-            <header class="header-box-react">
-                <h1>Iniciar Sesion</h1>
-                <p>Ingresa tus credenciales para acceder</p>
-            </header>
 
-            <div class="form-box-react">
-                <form method="post" action="">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-
-                    {% include 'pages/components/boton.html' with type='submit' class='login-button-react' text='Iniciar Sesion' %}
-                </form>
-
-                {% if error %}
-                    <p class="error-message">{{ error }}</p>
-                {% endif %}
-
-                <p class="no-account-react">¿No tienes una cuenta?</p>
-                {% include 'pages/components/boton.html' with url='#' class='register-button-react' text='Regístrate' %}
+    <main class="login-page">
+        <section class="login-card">
+            <div class="login-card__header">
+                <span class="login-card__brand">INES</span>
+                <p class="login-card__subtitle">Sistema Inteligente de Automatización</p>
             </div>
-        </div>
-    </div>
+
+            <h1>Acceso al Sistema</h1>
+
+            <form method="POST" class="login-form">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Usuario" required autofocus>
+                <input type="password" name="password" placeholder="Contraseña" required>
+
+                {% include 'pages/components/boton.html' with type='submit' class='primary-button' text='Ingresar' %}
+            </form>
+        </section>
+    </main>
 </body>
 </html>
