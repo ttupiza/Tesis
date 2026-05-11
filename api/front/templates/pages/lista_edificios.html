@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Edificios</title>
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/lista_beneficiarios.css' %}">
+</head>
+<body>
+    {% include 'pages/components/navbar.html' %}
+
+    <div class="perfil-page">
+        <div class="reportes-card">
+            <header class="report-header">
+                <div class="report-header-text">
+                    <h1 class="profile-title">Lista de Edificios</h1>
+                    <p class="profile-subtitle">Administra y consulta la información de los edificios</p>
+                </div>
+            </header>
+
+            <form class="search-container" method="get" action="">
+                <div class="input-with-icon">
+                    <span class="search-icon-inside">🔍</span>
+                    <input type="text" name="q" placeholder="Buscar" class="search-input" value="{{ request.GET.q|default:'' }}" />
+                </div>
+            </form>
+
+            <div class="table-wrapper">
+                <div class="table-title-bar">
+                    Edificios Registrados
+                </div>
+                <div class="table-responsive">
+                    <table class="report-table centered-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>RIF</th>
+                                <th>Dirección</th>
+                                <th style="text-align: center;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if edificios %}
+                                {% for edificio in edificios %}
+                                    <tr>
+                                        <td>{{ edificio.nb_edificio }}</td>
+                                        <td>{{ edificio.rif }}</td>
+                                        <td>{{ edificio.direccion }}</td>
+                                        <td style="text-align: center;">
+                                            <a href="{% url 'editar_edificio' edificio.id_edificio %}">Editar</a>
+                                            |
+                                            <a href="{% url 'eliminar_edificio' edificio.id_edificio %}" onclick="return confirm('¿Estás seguro de que deseas eliminar este edificio?')">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% else %}
+                                <tr>
+                                    <td colspan="4" style="text-align: center; padding: 24px 0;">
+                                        No hay edificios registrados.
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-actions-row">
+                {% url 'registro_edificio' as registro_url %}
+                {% include 'pages/components/boton.html' with url=registro_url class='register-button-react fab-inline' text='Agregar Edificio' %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

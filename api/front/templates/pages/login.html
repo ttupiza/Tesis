@@ -19,6 +19,11 @@
             </div>
 
             <h1>Acceso al Sistema</h1>
+            {% if error %}
+                <div class="login-error" style="margin:12px 0;padding:12px;border-radius:8px;background:#ffe9e9;border:1px solid #ffbdbd;color:#8a1f1f;">
+                    {{ error }}
+                </div>
+            {% endif %}
 
             <form method="POST" class="login-form">
                 {% csrf_token %}
