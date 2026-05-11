@@ -1,3 +1,4 @@
+/* navbar.css */
 /* Contenedor principal del Navbar */
 .ines-header {
     position: fixed;
@@ -21,7 +22,6 @@
     align-items: center !important;
     gap: 12px !important;
 }
-
 .ines-header-logo {
     background-color: #e8f0fe !important;
     color: #1967d2 !important;
@@ -31,7 +31,6 @@
     font-size: 1rem !important;
     display: inline-block !important;
 }
-
 .ines-header-system-name {
     color: #5f6368 !important;
     font-weight: 500 !important;
@@ -41,26 +40,23 @@
 /* Grupo Derecho: Enlaces de navegación */
 .ines-header-right-nav {
     display: flex !important;
-    flex-direction: row !important; /* Fuerza que sea horizontal */
+    flex-direction: row !important;
     gap: 30px !important;
     margin: 0 !important;
     padding: 0 !important;
-    list-style: none !important; /* ELIMINA LOS PUNTOS NEGROS */
+    list-style: none !important;
 }
-
 .ines-header-right-nav li {
-    list-style: none !important; /* Refuerzo para eliminar puntos */
+    list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
 }
-
 .ines-header-link {
     text-decoration: none !important;
     color: #1967d2 !important;
     font-weight: 600 !important;
     font-size: 0.9rem !important;
 }
-
 .ines-header-link:hover {
     text-decoration: underline !important;
 }

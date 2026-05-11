@@ -1,6 +1,6 @@
 /* menu.css */
 .menu-container {
-    padding: 120px 40px 40px;
+    padding: 100px 40px 40px 40px; /* 100px arriba: 70px navbar + 30px de respiro */
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -40,7 +40,7 @@
     transition: all 0.3s ease;
     border: 1px solid #e8f0fe;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    aspect-ratio: 1 / 1; /* Mantiene las tarjetas cuadradas */
+    aspect-ratio: 1 / 1;
 }
 
 .menu-card:hover {
@@ -61,24 +61,36 @@
     text-align: center;
 }
 
-/* RESPONSIVE: Una tarjeta bajo la otra en móviles */
-@media (max-width: 992px) {
+/* RESPONSIVE: Para tablets y móviles ajusta el grid y padding-top */
+@media (max-width: 1200px) {
     .menu-grid {
-        /* Bajamos a 3 columnas en tablets para que no se amontonen */
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets grandes */
+    }
+}
+
+@media (max-width: 900px) {
+    .menu-container {
+        padding: 90px 20px 30px 20px; /* menos en tablet */
+    }
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets medianos */
+        gap: 18px;
+        padding: 10px;
     }
 }
 
 @media (max-width: 600px) {
+    .menu-container {
+        padding: 75px 5px 18px 5px; /* navbar más chico y menos padding */
+        max-width: 98vw;
+    }
     .menu-grid {
-        /* Una sola columna en móvil como solicitaste */
         grid-template-columns: 1fr;
-        max-width: 350px; /* Evita que la tarjeta sea excesivamente ancha */
+        max-width: 350px;
         margin: 0 auto;
     }
-    
     .menu-card {
-        aspect-ratio: auto; /* En columna simple, mejor que el alto sea flexible */
-        padding: 30px;
+        aspect-ratio: auto;
+        padding: 25px;
     }
 }
