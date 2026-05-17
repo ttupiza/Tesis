@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tesis',
         'USER': 'root',
-        'PASSWORD': 'InCheck.LKZ_7156202.?',
+        'PASSWORD': '7316314',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
